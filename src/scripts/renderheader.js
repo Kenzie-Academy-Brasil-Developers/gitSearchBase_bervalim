@@ -11,6 +11,8 @@ export function renderHeaderGitHubInfo(gitHubUser) {
 // const repositoriesArray = JSON.parse(localStorage.getItem("gitHubRepositorie"));
 export function renderRepositories(repositories) {
   const unorderedRepositorieList = document.querySelector(".profile__ul");
+  unorderedRepositorieList.innerText = "";
+  console.log(repositories);
   repositories.forEach((repositorie) => {
     const listItemRepositorie = document.createElement("li");
     const repositorieTitle = document.createElement("h4");

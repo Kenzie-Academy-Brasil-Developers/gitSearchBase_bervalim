@@ -8,6 +8,7 @@ export async function searchGitHubUser(userGitHubName) {
       const responseConvert = await response.json();
       console.log(responseConvert);
       localStorage.setItem("gitHubUser", JSON.stringify(responseConvert));
+      await searchGitHubRepositorie(userGitHubName);
       location.replace("./src/pages/profile.html");
     } else {
       location.replace("./src/pages/error.html");
@@ -18,7 +19,7 @@ export async function searchGitHubUser(userGitHubName) {
 }
 
 export async function searchGitHubRepositorie(userGitHubName) {
-  await fetch(`${baseUrl}/${userGitHubName}/repos`, {
+  const repositorie = await fetch(`${baseUrl}/${userGitHubName}/repos`, {
     method: "GET",
   }).then(async (response) => {
     if (response.ok) {
@@ -30,6 +31,7 @@ export async function searchGitHubRepositorie(userGitHubName) {
       );
     }
   });
+  return repositorie;
 }
 
 // searchGitHubRepositorie(test2);

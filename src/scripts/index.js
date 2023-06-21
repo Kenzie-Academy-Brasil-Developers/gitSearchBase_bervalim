@@ -6,10 +6,8 @@ function handleSearchGitHubUser() {
 
   buttonGitHubUser.addEventListener("click", () => {
     const userGitHubName = inputGitHubUser.value;
-    console.log("teste");
     localStorage.setItem("userName", userGitHubName);
     searchGitHubUser(userGitHubName);
-    searchGitHubRepositorie(userGitHubName);
   });
 }
 handleSearchGitHubUser();
