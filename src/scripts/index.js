@@ -1,5 +1,5 @@
 import { searchGitHubUser, searchGitHubRepositorie } from "./requests.js";
-import { renderRepositories } from "./renderheader.js";
+
 function handleSearchGitHubUser() {
   const inputGitHubUser = document.querySelector(".index__input");
   const buttonGitHubUser = document.querySelector(".index__button");
@@ -13,5 +13,5 @@ function handleSearchGitHubUser() {
   });
 }
 handleSearchGitHubUser();
-const repositoriesArray = JSON.parse(localStorage.getItem("gitHubRepositorie"));
-renderRepositories(repositoriesArray);
+// const repositoriesArray = JSON.parse(localStorage.getItem("gitHubRepositorie"));
+// renderRepositories(repositoriesArray);

@@ -1,8 +1,15 @@
 import { renderHeaderGitHubInfo } from "./renderheader.js";
-
+import { renderRepositories } from "./renderheader.js";
 function showHeaderGitHubInfo() {
   const gitHubUser = JSON.parse(localStorage.getItem("gitHubUser"));
   renderHeaderGitHubInfo(gitHubUser);
+}
+
+function showRenderRepositorieInfo() {
+  const gitHubRepositorie = JSON.parse(
+    localStorage.getItem("gitHubRepositorie")
+  );
+  renderRepositories(gitHubRepositorie);
 }
 
 function handleNavigation() {
@@ -14,3 +21,4 @@ function handleNavigation() {
 }
 showHeaderGitHubInfo();
 handleNavigation();
+showRenderRepositorieInfo();
