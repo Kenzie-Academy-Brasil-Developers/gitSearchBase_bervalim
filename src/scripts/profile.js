@@ -16,6 +16,7 @@ function handleNavigation() {
   const changeUserButton = document.querySelector(".profile__header>button");
 
   changeUserButton.addEventListener("click", () => {
+    localStorage.clear();
     location.replace("../../");
   });
 }

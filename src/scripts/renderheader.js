@@ -1,14 +1,23 @@
 export function renderHeaderGitHubInfo(gitHubUser) {
-  // const profileDiv = document.querySelector(".profile_div");
-  // const imgProfile = profileDiv.querySelector("img");
-  // const paragraphDiv = profileDiv.querySelector("p");
-  const imgProfile = document.querySelector("img");
-  const paragraphDiv = document.querySelector("p");
+  // const imgProfile = document.querySelector("img");
+  // const paragraphDiv = document.querySelector("p");
+  // imgProfile.src = gitHubUser.avatar_url;
+  // paragraphDiv.innerText = gitHubUser.name || gitHubUser.login;
+  const headerProfile = document.querySelector(".profile__header");
+  const divProfile = document.createElement("div");
+  const imgProfile = document.createElement("img");
+  const paragraphProfile = document.createElement("p");
+  const buttonProfile = document.createElement("button");
+
+  divProfile.classList.add("profile_div");
   imgProfile.src = gitHubUser.avatar_url;
-  paragraphDiv.innerText = gitHubUser.name || gitHubUser.login;
+  paragraphProfile.innerText = gitHubUser.name || gitHubUser.login;
+  buttonProfile.innerHTML = "Trocar de usuário";
+
+  divProfile.append(imgProfile, paragraphProfile);
+  headerProfile.append(divProfile, buttonProfile);
 }
-// ul apenas para fazer o append
-// const repositoriesArray = JSON.parse(localStorage.getItem("gitHubRepositorie"));
+
 export function renderRepositories(repositories) {
   const unorderedRepositorieList = document.querySelector(".profile__ul");
   unorderedRepositorieList.innerText = "";
@@ -21,7 +30,7 @@ export function renderRepositories(repositories) {
 
     repositorieTitle.innerText = repositorie.name;
 
-    if (paragraphRepositorie.innerText == null) {
+    if (repositorie.description === null) {
       paragraphRepositorie.innerText = "Repositório sem descrição";
     } else {
       paragraphRepositorie.innerText = repositorie.description;
@@ -39,7 +48,3 @@ export function renderRepositories(repositories) {
     unorderedRepositorieList.append(listItemRepositorie);
   });
 }
-
-//name
-// description
-// html_url
