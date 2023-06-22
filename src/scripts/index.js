@@ -9,6 +9,9 @@ function handleSearchGitHubUser() {
     spinner.classList.remove("hidden");
     setTimeout(() => {
       const userGitHubName = inputGitHubUser.value;
+      if (userGitHubName == "") {
+        location.replace("../../");
+      }
       localStorage.setItem("userName", userGitHubName);
       searchGitHubUser(userGitHubName);
       spinner.classList.add("hidden");
