@@ -1,4 +1,4 @@
-import { searchGitHubUser, searchGitHubRepositorie } from "./requests.js";
+import { searchGitHubUser } from "./requests.js";
 
 function handleSearchGitHubUser() {
   const inputGitHubUser = document.querySelector(".index__input");
@@ -15,7 +15,7 @@ function handleSearchGitHubUser() {
       localStorage.setItem("userName", userGitHubName);
       searchGitHubUser(userGitHubName);
       spinner.classList.add("hidden");
-    }, 2000);
+    }, 1000);
   });
 }
 handleSearchGitHubUser();
