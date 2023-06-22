@@ -74,7 +74,35 @@
   line-height: 50px;
   color: var(--color-grey-7);
 }
+.spinner {
+  margin-top: 2rem;
+  text-align: center;
+  height: 30px;
+  width: 30px;
 
+  border-top: 2px solid var(--color-alert);
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 768px) {
   .index__section-first,
   .index__section-second,
